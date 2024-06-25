@@ -5,7 +5,7 @@ return {
     { 'zapling/mason-conform.nvim', config = true },
   },
   opts = {
-    notify_on_error = true,
+    notify_on_error = false,
     format_on_save = function(bufnr)
       -- disable format for specific languages
       local disable_filetypes = { c = true, cpp = true }
@@ -23,7 +23,7 @@ return {
     end,
     formatters_by_ft = {
       lua = { 'stylua' },
-      go = { 'goimports', 'gofmt' },
+      go = { 'goimports', 'gofmt', 'golines' },
     },
   },
   config = function(_, opts)

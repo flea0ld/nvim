@@ -80,9 +80,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.lsp.inlay_hint.enable(not enabled)
 
         if not enabled then
-          vim.notify '[LSP] Inlay hints ON'
+          vim.notify('Inlay hints ON', vim.log.levels.INFO, { title = 'LSP' })
         else
-          vim.notify '[LSP] Inlay hints OFF'
+          vim.notify('Inlay hints OFF', vim.log.levels.INFO, { title = 'LSP' })
         end
       end, '[T]oggle Inlay [H]ints')
     end
