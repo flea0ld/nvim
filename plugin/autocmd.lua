@@ -11,7 +11,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- Sets up key mappings and autocommands for Neovim's LSP integration, enhancing navigation and
 -- documentation features using Telescope, and providing reference highlighting and inlay hints.
-
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
   callback = function(event)
@@ -107,3 +106,10 @@ vim.api.nvim_create_user_command('FormatEnable', function()
 end, {
   desc = 'Re-enable autoformat-on-save',
 })
+
+-- Close current buffer and show the previous for bufferline plugin
+vim.api.nvim_create_user_command('BufferLineCloseCurrent', function()
+  local buf_id = vim.fn.bufnr()
+  vim.cmd 'BufferLineCyclePrev'
+  vim.cmd('bdelete ' .. buf_id)
+end, { desc = 'Close current buffer' })

@@ -9,8 +9,8 @@ return {
   },
   opts = {
     servers = {
-      lua_ls = require 'custom.plugins.lsp.servers.lua_ls',
-      gopls = require 'custom.plugins.lsp.servers.gopls',
+      lua_ls = require 'plugins.lsp.servers.lua_ls',
+      gopls = require 'plugins.lsp.servers.gopls',
     },
     extra_tools = {
       'stylua',

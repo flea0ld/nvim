@@ -27,5 +27,10 @@ return {
       translator = false,
       translate_problems = false,
     },
+    injector = {
+      ['golang'] = {
+        before = { 'package main' },
+      },
+    },
   },
 }
