@@ -6,6 +6,8 @@ return {
 
     { 'williamboman/mason.nvim', config = true },
     { 'j-hui/fidget.nvim', opts = {} },
+    -- setup rust
+    { 'mrcjkb/rustaceanvim', version = '^4', lazy = false },
   },
   opts = {
     servers = {
